@@ -142,7 +142,7 @@ async def test(test_timeout=10 * MINUTES, content=None):
             "temperature": 1.0,
             "top_p": 0.95,
             "presence_penalty": 1.5,
-            "extra_body": {"top_k": 20},
+            "top_k": 20,
         }
 
         headers = {
