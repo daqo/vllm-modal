@@ -5,7 +5,7 @@ import aiohttp
 import modal
 
 MODEL_NAME = "Qwen/Qwen3.5-9B"
-MODEL_REVISION = "main"
+MODEL_REVISION = "c202236235762e1c871ad0ccb60c8ee5ba337b9a"
 VLLM_PORT = 8000
 N_GPU = 1
 MINUTES = 60
