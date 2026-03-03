@@ -1,6 +1,12 @@
 # vllm-modal
 
+GitHub: https://github.com/daqo/vllm-modal
+
 Deploys Qwen3.5-9B on Modal using vLLM, serving an OpenAI-compatible API with tool calling and thinking mode.
+
+## Rules
+
+- When making major changes (new models, features, configuration changes, or architectural updates), update `README.md` to reflect those changes.
 
 ## Stack
 
