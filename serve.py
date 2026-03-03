@@ -98,6 +98,10 @@ def serve():
         # Enables parsing of <think>...</think> blocks in model output.
         "--reasoning-parser",
         "qwen3",
+        # Enable tool/function calling support.
+        "--enable-auto-tool-choice",
+        "--tool-call-parser",
+        "qwen3_coder",
         # Skip Torch compilation and CUDA graph capture for faster cold starts.
         # Remove this flag for better throughput on long-running deployments.
         "--enforce-eager",
