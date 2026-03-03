@@ -64,7 +64,7 @@ app = modal.App("qwen3.5-9b-vllm")
 
 @app.function(
     image=vllm_image,
-    gpu=f"H100:{N_GPU}",
+    gpu=f"A100-40GB:{N_GPU}",
     scaledown_window=15 * MINUTES,  # keep container warm for 15 min after last request
     timeout=10 * MINUTES,
     volumes={
@@ -93,8 +93,9 @@ def serve():
         "--tensor-parallel-size",
         str(N_GPU),
         # Model supports up to 262144 natively (1M+ with YaRN).
+        # Kept at 32k to fit in A100 40GB VRAM alongside KV cache.
         "--max-model-len",
-        "131072",
+        "32768",
         # Enables parsing of <think>...</think> blocks in model output.
         "--reasoning-parser",
         "qwen3",
